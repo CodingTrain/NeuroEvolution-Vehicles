@@ -31,7 +31,7 @@ function buildTrack() {
 
   let noiseMax = 15;
   const total = 30;
-  const pathWidth = 20;
+  const pathWidth = 25;
   let startX = random(1000);
   let startY = random(1000);
   for (let i = 0; i < total; i++) {
