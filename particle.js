@@ -140,8 +140,26 @@ class Particle {
     rectMode(CENTER);
     rect(0, 0, 10, 5);
     pop();
+    // for (let ray of this.rays) {
+    //   // ray.show();
+    // }
+    // if (this.goal) {
+    //   this.goal.show();
+    // }
+  }
+
+  highlight() {
+    push();
+    translate(this.pos.x, this.pos.y);
+    const heading = this.vel.heading();
+    rotate(heading);
+    stroke(0, 255, 0);
+    fill(0, 255, 0);
+    rectMode(CENTER);
+    rect(0, 0, 10, 5);
+    pop();
     for (let ray of this.rays) {
-      // ray.show();
+      ray.show();
     }
     if (this.goal) {
       this.goal.show();

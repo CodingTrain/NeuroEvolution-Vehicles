@@ -82,6 +82,7 @@ function draw() {
   const cycles = speedSlider.value();
   background(0);
 
+  let bestP = population[0];
   for (let n = 0; n < cycles; n++) {
     for (let particle of population) {
       particle.look(walls);
@@ -89,6 +90,11 @@ function draw() {
       particle.bounds();
       particle.update();
       particle.show();
+
+      // Get the best one
+      if (particle.fitness > bestP.fitness) {
+        bestP = particle;
+      }
     }
 
     for (let i = population.length - 1; i >= 0; i--) {
@@ -114,6 +120,8 @@ function draw() {
   for (let particle of population) {
     particle.show();
   }
+
+  bestP.highlight();
 
   // ellipse(start.x, start.y, 10);
   // ellipse(end.x, end.y, 10);
