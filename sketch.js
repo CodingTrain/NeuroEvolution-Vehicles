@@ -6,9 +6,11 @@
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
 const TOTAL = 100;
-const MUTATION_RATE = 0.05;
+const MUTATION_RATE = 0.1;
 const LIFESPAN = 25;
 const SIGHT = 50;
+
+let generationCount = 0;
 
 let walls = [];
 let ray;
@@ -29,9 +31,9 @@ function buildTrack() {
   inside = [];
   outside = [];
 
-  let noiseMax = 5;
-  const total = 100;
-  const pathWidth = 30;
+  let noiseMax = 4;
+  const total = 75;
+  const pathWidth = 50;
   let startX = random(1000);
   let startY = random(1000);
   for (let i = 0; i < total; i++) {
@@ -107,6 +109,7 @@ function draw() {
     if (population.length == 0) {
       buildTrack();
       nextGeneration();
+      generationCount++;
     }
   }
 
@@ -122,6 +125,11 @@ function draw() {
   }
 
   bestP.highlight();
+
+  fill(255);
+  textSize(24);
+  noStroke();
+  text('generation ' + generationCount, 10, 50);
 
   // ellipse(start.x, start.y, 10);
   // ellipse(end.x, end.y, 10);

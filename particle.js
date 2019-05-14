@@ -12,20 +12,20 @@ class Particle {
     this.pos = createVector(start.x, start.y);
     this.vel = createVector();
     this.acc = createVector();
-    this.maxspeed = 4;
-    this.maxforce = 0.5;
+    this.maxspeed = 5;
+    this.maxforce = 0.2;
     this.sight = SIGHT;
     this.rays = [];
     this.index = 0;
     this.counter = 0;
 
-    for (let a = -45; a < 45; a += 5) {
+    for (let a = -45; a < 45; a += 15) {
       this.rays.push(new Ray(this.pos, radians(a)));
     }
     if (brain) {
       this.brain = brain.copy();
     } else {
-      this.brain = new NeuralNetwork(this.rays.length, this.rays.length, 2);
+      this.brain = new NeuralNetwork(this.rays.length, this.rays.length * 2, 2);
     }
   }
 
@@ -156,7 +156,7 @@ class Particle {
     stroke(0, 255, 0);
     fill(0, 255, 0);
     rectMode(CENTER);
-    rect(0, 0, 10, 5);
+    rect(0, 0, 20, 10);
     pop();
     for (let ray of this.rays) {
       ray.show();
