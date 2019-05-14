@@ -25,7 +25,7 @@ class Particle {
     if (brain) {
       this.brain = brain.copy();
     } else {
-      this.brain = new NeuralNetwork(this.rays.length, this.rays.length, 1);
+      this.brain = new NeuralNetwork(this.rays.length, this.rays.length, 2);
     }
   }
 
@@ -115,9 +115,10 @@ class Particle {
     // inputs.push(vel.y);
     const output = this.brain.predict(inputs);
     let angle = map(output[0], 0, 1, -PI, PI);
+    let speed = map(output[1], 0, 1, 0, this.maxspeed);
     angle += this.vel.heading();
     const steering = p5.Vector.fromAngle(angle);
-    steering.setMag(this.maxspeed);
+    steering.setMag(speed);
     steering.sub(this.vel);
     steering.limit(this.maxforce);
     this.applyForce(steering);

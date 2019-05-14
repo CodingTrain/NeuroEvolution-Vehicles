@@ -7,7 +7,7 @@
 
 const TOTAL = 100;
 const MUTATION_RATE = 0.05;
-const LIFESPAN = 50;
+const LIFESPAN = 25;
 const SIGHT = 50;
 
 let walls = [];
