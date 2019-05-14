@@ -29,20 +29,21 @@ function buildTrack() {
   inside = [];
   outside = [];
 
-  let noiseMax = 15;
-  const total = 30;
-  const pathWidth = 25;
+  let noiseMax = 5;
+  const total = 100;
+  const pathWidth = 30;
   let startX = random(1000);
   let startY = random(1000);
   for (let i = 0; i < total; i++) {
     let a = map(i, 0, total, 0, TWO_PI);
     let xoff = map(cos(a), -1, 1, 0, noiseMax) + startX;
     let yoff = map(sin(a), -1, 1, 0, noiseMax) + startY;
-    let r = map(noise(xoff, yoff), 0, 1, 100, height / 2);
-    let x1 = width / 2 + (r - pathWidth) * cos(a);
-    let y1 = height / 2 + (r - pathWidth) * sin(a);
-    let x2 = width / 2 + (r + pathWidth) * cos(a);
-    let y2 = height / 2 + (r + pathWidth) * sin(a);
+    let xr = map(noise(xoff, yoff), 0, 1, 100, width * 0.6);
+    let yr = map(noise(xoff, yoff), 0, 1, 100, height * 0.6);
+    let x1 = width / 2 + (xr - pathWidth) * cos(a);
+    let y1 = height / 2 + (yr - pathWidth) * sin(a);
+    let x2 = width / 2 + (xr + pathWidth) * cos(a);
+    let y2 = height / 2 + (yr + pathWidth) * sin(a);
     checkpoints.push(new Boundary(x1, y1, x2, y2));
     inside.push(createVector(x1, y1));
     outside.push(createVector(x2, y2));
@@ -62,7 +63,7 @@ function buildTrack() {
 }
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(1200, 800);
 
   tf.setBackend('cpu');
   buildTrack();
@@ -114,6 +115,6 @@ function draw() {
     particle.show();
   }
 
-  ellipse(start.x, start.y, 10);
-  ellipse(end.x, end.y, 10);
+  // ellipse(start.x, start.y, 10);
+  // ellipse(end.x, end.y, 10);
 }
