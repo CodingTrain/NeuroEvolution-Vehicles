@@ -26,6 +26,15 @@ let inside = [];
 let outside = [];
 let checkpoints = [];
 
+// around 5-6 successfully completed rounds will make the fitness of 500+
+// so maxFitness is set to 500
+// thus the changeMap will flag becomes true and we will create new map
+// when any of the particle completes multiple rounds in current map
+// this will help to make the current generation to work on new map
+// and generalize to variety of maps
+const maxFitness = 500;
+let changeMap = false;
+
 function buildTrack() {
   checkpoints = [];
   inside = [];
@@ -104,6 +113,22 @@ function draw() {
       if (particle.dead || particle.finished) {
         savedParticles.push(population.splice(i, 1)[0]);
       }
+
+      if (!changeMap && particle.fitness > maxFitness) {
+        changeMap = true;
+      }
+    }
+
+    if (population.length !== 0 && changeMap) {
+      console.log("i ma here")
+      for (let i = population.length - 1; i >= 0; i--) {
+        savedParticles.push(population.splice(i, 1)[0]);
+      }
+
+      buildTrack();
+      nextGeneration();
+      generationCount++;
+      changeMap=false;
     }
 
     if (population.length == 0) {
