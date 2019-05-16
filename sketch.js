@@ -120,7 +120,6 @@ function draw() {
     }
 
     if (population.length !== 0 && changeMap) {
-      console.log("i ma here")
       for (let i = population.length - 1; i >= 0; i--) {
         savedParticles.push(population.splice(i, 1)[0]);
       }
