@@ -14,6 +14,9 @@ https://codingtrain.github.io/NeuroEvolution-Vehicles/
 - [ ] Add paragraph elements displaying the simulation speed and best car stats
 - [ ] Add functionality for saving/loading cars
 - [ ] Add sliders to control the features of the track before it is generated, like difficulty
+  * thickness
+  * jaggedness
+  * height of jaggedness
 - [ ] Add button to regenerate track
 - [ ] Add fov rendering
 - [ ] Add crossover
