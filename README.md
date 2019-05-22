@@ -16,6 +16,7 @@ https://codingtrain.github.io/NeuroEvolution-Vehicles/
 - [ ] Add sliders to control the features of the track before it is generated, like difficulty
 - [ ] Add button to regenerate track
 - [ ] Add fov rendering
+- [ ] Add crossover
 
 ## Community Contributions
 * [title](link to project) - [Name](optional personal link)
