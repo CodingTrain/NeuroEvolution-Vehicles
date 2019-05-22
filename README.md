@@ -17,3 +17,7 @@ https://codingtrain.github.io/NeuroEvolution-Vehicles/
 - [ ] Add button to regenerate track
 - [ ] Add fov rendering
 
+## Community Contributions
+* [title](link to project) - [Name](optional personal link)
+* [Ai cars in Processing](https://www.youtube.com/watch?v=-VHdAQHhgdA&t=151s) - [David Snyder](http://gypsydangerous.xyz/)  
+
