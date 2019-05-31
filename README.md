@@ -20,6 +20,7 @@ https://codingtrain.github.io/NeuroEvolution-Vehicles/
 - [ ] Add button to regenerate track
 - [ ] Add fov rendering
 - [ ] Add crossover
+- [ ] create cool tracks with the supershape formula
 
 ## Community Contributions
 * [title](link to project) - [Name](optional personal link)
