@@ -1,6 +1,8 @@
 // Daniel Shiffman
 // Neuro-Evolution Steering
 
+/// <reference path="./sketch.js" />
+
 function nextGeneration() {
   console.log('next generation');
   calculateFitness(end);

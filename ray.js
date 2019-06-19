@@ -5,6 +5,8 @@
 // 2D Ray Casting
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
+/// <reference path="./sketch.js" />
+
 class Ray {
   constructor(pos, angle) {
     this.pos = pos;

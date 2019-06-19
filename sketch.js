@@ -5,6 +5,17 @@
 // 2D Ray Casting
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
+/// <reference path="./particle.js" />
+/// <reference path="./track.js" />
+/// <reference path="./ga.js" />
+
+/**
+ * @tutorial https://www.npmjs.com/package/@types/p5
+ * @description run npm i @types/p5
+ */
+/// <reference path="../node_modules/@types/p5/index.d.ts" />
+/// <reference path="../node_modules/@types/p5/global.d.ts" />
+
 const TOTAL = 100;
 const MUTATION_RATE = 0.1;
 const LIFESPAN = 25;

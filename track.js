@@ -1,3 +1,5 @@
+/// <reference path="./sketch.js" />
+/// <reference path="./boundary.js" />
 /**
  * @param {number} checkpointAmount 
  */

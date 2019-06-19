@@ -3,6 +3,16 @@
 // http://thecodingtrain.com
 // https://youtu.be/cdUNkwXx-I4
 
+/**
+ * @tutorial https://www.npmjs.com/package/@types/p5
+ * @description run npm i @types/p5
+ */
+/// <reference path="../node_modules/@types/p5/index.d.ts" />
+/// <reference path="../node_modules/@types/p5/global.d.ts" />
+
+///<reference path="type/tensorflow.d.ts"/>
+///<reference path="type/p5.d.ts"/>
+
 class NeuralNetwork {
   constructor(a, b, c, d) {
     if (a instanceof tf.Sequential) {

@@ -1,3 +1,7 @@
+/// <reference path="./nn.js" />
+/// <reference path="./sketch.js" />
+/// <reference path="./ray.js" />
+
 function pldistance(p1, p2, x, y) {
   const num = abs((p2.y - p1.y) * x - (p2.x - p1.x) * y + p2.x * p1.y - p2.y * p1.x);
   const den = p5.Vector.dist(p1, p2);
