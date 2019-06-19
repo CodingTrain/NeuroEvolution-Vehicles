@@ -5,7 +5,7 @@
 
 function nextGeneration() {
   console.log('next generation');
-  calculateFitness(end);
+  calculateFitness();
   for (let i = 0; i < TOTAL; i++) {
     population[i] = pickOne();
   }
@@ -15,6 +15,9 @@ function nextGeneration() {
   savedParticles = [];
 }
 
+/**
+ * @returns {Particle}
+ */
 function pickOne() {
   let index = 0;
   let r = random(1);
@@ -30,7 +33,7 @@ function pickOne() {
   return child;
 }
 
-function calculateFitness(target) {
+function calculateFitness() {
   for (let particle of savedParticles) {
     particle.calculateFitness();
   }

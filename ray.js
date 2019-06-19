@@ -13,13 +13,19 @@ class Ray {
     this.angle = angle;
     this.dir = p5.Vector.fromAngle(angle);
   }
-
+  /**
+   * 
+   * @param {number} x 
+   * @param {number} y 
+   */
   lookAt(x, y) {
     this.dir.x = x - this.pos.x;
     this.dir.y = y - this.pos.y;
     this.dir.normalize();
   }
-
+  /**
+   * @param {number} offset 
+   */
   rotate(offset) {
     this.dir = p5.Vector.fromAngle(this.angle + offset);
   }
@@ -31,7 +37,10 @@ class Ray {
     line(0, 0, this.dir.x * SIGHT, this.dir.y * SIGHT);
     pop();
   }
-
+  /**
+    * @param {Boundary} wall 
+    * @returns {import("p5").Vector|null} position of the interception or null
+    */
   cast(wall) {
     const x1 = wall.a.x;
     const y1 = wall.a.y;

@@ -9,6 +9,10 @@ function pldistance(p1, p2, x, y) {
 }
 
 class Particle {
+  /**
+   * 
+   * @param {NeuralNetwork} [brain]
+   */
   constructor(brain) {
     this.fitness = 0;
     this.dead = false;
@@ -19,7 +23,9 @@ class Particle {
     this.maxspeed = 5;
     this.maxforce = 0.2;
     this.sight = SIGHT;
+    /**@type {Ray[]} */
     this.rays = [];
+    /**@type number */
     this.index = 0;
     this.counter = 0;
 
@@ -45,6 +51,10 @@ class Particle {
     this.acc.add(force);
   }
 
+  /**
+   * update the position/rotation/velocity of the current particle
+   * also sets it to dead if it reached its lifespan
+   */
   update() {
     if (!this.dead && !this.finished) {
       this.pos.add(this.vel);
@@ -61,7 +71,10 @@ class Particle {
       }
     }
   }
-
+  /**
+   * @description checks distance to current goal
+   * @param {Boundary[]} checkpoints
+   */
   check(checkpoints) {
     if (!this.finished) {
       this.goal = checkpoints[this.index];
@@ -83,6 +96,10 @@ class Particle {
     // }
   }
 
+  /**
+   * @description checks all the rays and executes an action
+   * @param {Boundary[]} walls
+   */
   look(walls) {
     const inputs = [];
     for (let i = 0; i < this.rays.length; i++) {
@@ -129,12 +146,19 @@ class Particle {
     // console.log(output);
   }
 
+  /**
+   * @description checks wether the particle in inside the screen
+   */
   bounds() {
     if (this.pos.x > width || this.pos.x < 0 || this.pos.y > height || this.pos.y < 0) {
       this.dead = true;
     }
   }
 
+
+  /**
+   * @description display the current particle
+   */
   show() {
     push();
     translate(this.pos.x, this.pos.y);
@@ -152,6 +176,9 @@ class Particle {
     // }
   }
 
+  /**
+   * @description highlights the current particle and its rays in green
+   */
   highlight() {
     push();
     translate(this.pos.x, this.pos.y);

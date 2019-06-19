@@ -24,10 +24,13 @@ class NeuralNetwork {
       this.input_nodes = a;
       this.hidden_nodes = b;
       this.output_nodes = c;
+      /**@type {model} */
       this.model = this.createModel();
     }
   }
-
+  /**
+   * copy current weights to new model
+   */
   copy() {
     return tf.tidy(() => {
       const modelCopy = this.createModel();
@@ -40,7 +43,10 @@ class NeuralNetwork {
       return new NeuralNetwork(modelCopy, this.input_nodes, this.hidden_nodes, this.output_nodes);
     });
   }
-
+  /**
+   * 
+   * @param {number} rate 
+   */
   mutate(rate) {
     tf.tidy(() => {
       const weights = this.model.getWeights();
@@ -52,6 +58,7 @@ class NeuralNetwork {
         for (let j = 0; j < values.length; j++) {
           if (random(1) < rate) {
             let w = values[j];
+            // @ts-ignore randomGaussian is wrongly typed in the current version
             values[j] = w + randomGaussian();
           }
         }
@@ -75,7 +82,9 @@ class NeuralNetwork {
       return outputs;
     });
   }
-
+  /**
+   * @returns {model}
+   */
   createModel() {
     const model = tf.sequential();
     const hidden = tf.layers.dense({

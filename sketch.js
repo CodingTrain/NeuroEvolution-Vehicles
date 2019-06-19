@@ -8,7 +8,7 @@
 /// <reference path="./particle.js" />
 /// <reference path="./track.js" />
 /// <reference path="./ga.js" />
-
+/// <reference path="./type/p5.d.ts" />
 /**
  * @tutorial https://www.npmjs.com/package/@types/p5
  * @description run npm i @types/p5
@@ -24,19 +24,34 @@ const SIGHT = 50;
 const TRACK_CHECKPOINT_AMOUNT = 60;
 
 let generationCount = 0;
-
+/**
+ * @type {Boundary[]}
+ */
 let walls = [];
-let ray;
-
+//let ray;
+/**
+ * @type {Particle[]}
+ */
 let population = [];
+/**
+ * @type {Particle[]}
+ */
 let savedParticles = [];
 
 let start, end;
 
 let speedSlider;
-
+/**
+ * @type {import("p5").Vector[]}
+ */
 let inside = [];
+/**
+ * @type {import("p5").Vector[]}
+ */
 let outside = [];
+/**
+ * @type Boundary[]
+ */
 let checkpoints = [];
 
 // around 5-6 successfully completed rounds will make the fitness of 500+

@@ -1,15 +1,15 @@
 /// <reference path="./sketch.js" />
 /// <reference path="./boundary.js" />
+
 /**
- * @param {number} checkpointAmount 
+ * @param {number} total 
  */
-function buildTrack(checkpointAmount) {
+function buildTrack(total) {
     checkpoints = [];
     inside = [];
     outside = [];
 
     let noiseMax = 4;
-    const total = checkpointAmount;
     const pathWidth = 60;
     let startX = random(1000);
     let startY = random(1000);

@@ -15,9 +15,13 @@ declare interface Window {
 interface p5I {
     Vector: typeof Vector
 }
+export interface p5Vector extends Vector {
 
+}
 declare let p5: p5I
+
 declare global {
+
     let p5: p5I
     interface Window {
         setup?: Function;
@@ -30,5 +34,3 @@ declare global {
     }
 }
 
-//this one is badly typed in the current version
-declare let randomGaussian: (mean?, sd?) => number

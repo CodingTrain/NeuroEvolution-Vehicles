@@ -30,7 +30,7 @@ interface TensorObject {
     shape: Array<number>
     reshape: (shape: Array<number>) => TensorObject
     dataSync: () => Array<number>
-
+    clone: () => TensorObject
     data: () => Promise<Array<number>>
 }
 interface TensorInterface {
