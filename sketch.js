@@ -31,17 +31,17 @@ function buildTrack() {
   inside = [];
   outside = [];
 
-  let noiseMax = 4;
-  const total = 75;
-  const pathWidth = 50;
+  let noiseMax = 3;
+  const total = 60;
+  const pathWidth = 75;
   let startX = random(1000);
   let startY = random(1000);
   for (let i = 0; i < total; i++) {
     let a = map(i, 0, total, 0, TWO_PI);
     let xoff = map(cos(a), -1, 1, 0, noiseMax) + startX;
     let yoff = map(sin(a), -1, 1, 0, noiseMax) + startY;
-    let xr = map(noise(xoff, yoff), 0, 1, 100, width * 0.6);
-    let yr = map(noise(xoff, yoff), 0, 1, 100, height * 0.6);
+    let xr = map(noise(xoff, yoff), 0, 1, 100, width * 0.5);
+    let yr = map(noise(xoff, yoff), 0, 1, 100, height * 0.5);
     let x1 = width / 2 + (xr - pathWidth) * cos(a);
     let y1 = height / 2 + (yr - pathWidth) * sin(a);
     let x2 = width / 2 + (xr + pathWidth) * cos(a);
