@@ -40,9 +40,9 @@ function buildTrack() {
   inside = [];
   outside = [];
 
-  let noiseMax = 3;
+  let noiseMax = 4;
   const total = 60;
-  const pathWidth = 75;
+  const pathWidth = 60;
   let startX = random(1000);
   let startY = random(1000);
   for (let i = 0; i < total; i++) {
@@ -127,7 +127,7 @@ function draw() {
       buildTrack();
       nextGeneration();
       generationCount++;
-      changeMap=false;
+      changeMap = false;
     }
 
     if (population.length == 0) {
