@@ -5,6 +5,16 @@
 // 2D Ray Casting
 // https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 
+/**
+ * @tutorial https://www.npmjs.com/package/@types/p5
+ * @description run npm i @types/p5
+ */
+
+/// <reference path="../node_modules/@types/p5/index.d.ts" />
+/// <reference path="../node_modules/@types/p5/global.d.ts" />
+
+/// <reference path="./type/p5.d.ts" /> 
+
 class Boundary {
   constructor(x1, y1, x2, y2) {
     this.a = createVector(x1, y1);
