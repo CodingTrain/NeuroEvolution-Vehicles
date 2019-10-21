@@ -71,7 +71,7 @@ class Particle {
   }
 
   calculateFitness() {
-    this.fitness = pow(2, this.fitness);
+    this.fitness = pow(this.fitness, 2);
     // if (this.finished) {
     // } else {
     //   const d = p5.Vector.dist(this.pos, target);
