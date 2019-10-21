@@ -13,7 +13,8 @@ https://codingtrain.github.io/NeuroEvolution-Vehicles/
 - [ ] Improve the look of the track and cars
 - [ ] Add paragraph elements displaying the simulation speed and best car stats
 - [ ] Add functionality for saving/loading cars
-- [ ] Add sliders to control the features of the track before it is generated, like difficulty
+- [ ] Add sliders to control the features of the track before it is generated, like 
+  * difficulty
   * thickness
   * jaggedness
   * height of jaggedness
